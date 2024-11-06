@@ -1,0 +1,5 @@
+flask==2.0.1
+flask-sqlalchemy==2.5.1
+typing-extensions>=4.0.0
+python-json-logger>=2.0.0
+watchdog>=2.1.0 

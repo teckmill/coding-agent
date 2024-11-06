@@ -1,0 +1,11 @@
+{
+    "singleton": {
+        "python": "class Singleton:\n    _instance = None\n\n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n        return cls._instance"
+    },
+    "factory": {
+        "python": "class Creator:\n    def factory_method(self):\n        pass\n\n    def some_operation(self):\n        product = self.factory_method()\n        return f'Creator: Working with {product}'"
+    },
+    "observer": {
+        "python": "class Subject:\n    def __init__(self):\n        self._observers = []\n        self._state = None\n\n    def attach(self, observer):\n        self._observers.append(observer)\n\n    def notify(self):\n        for observer in self._observers:\n            observer.update(self._state)"
+    }
+} 

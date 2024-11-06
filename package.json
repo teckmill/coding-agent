@@ -1,0 +1,82 @@
+{
+    "name": "coding-agent-extension",
+    "displayName": "Coding Agent",
+    "description": "AI-powered coding assistant for generating code and using templates",
+    "version": "0.0.1",
+    "publisher": "SLR",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "code generation",
+        "templates",
+        "AI",
+        "coding assistant"
+    ],
+    "activationEvents": [
+        "onCommand:codingAgent.generateCode",
+        "onCommand:codingAgent.useTemplate"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codingAgent.generateCode",
+                "title": "Coding Agent: Generate Code"
+            },
+            {
+                "command": "codingAgent.useTemplate",
+                "title": "Coding Agent: Use Template"
+            }
+        ],
+        "configuration": {
+            "title": "Coding Agent",
+            "properties": {
+                "codingAgent.pythonPath": {
+                    "type": "string",
+                    "default": "python",
+                    "description": "Path to Python executable"
+                },
+                "codingAgent.timeout": {
+                    "type": "number",
+                    "default": 30000,
+                    "description": "Timeout for code generation (in milliseconds)"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts",
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^14.18.63",
+        "@types/vscode": "^1.95.0",
+        "eslint": "^7.32.0",
+        "mocha": "^9.1.1",
+        "python-shell": "^5.0.0",
+        "typescript": "^4.9.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/teckmill/coding-agent-extension.git"
+    },
+    "bugs": {
+        "url": "https://github.com/teckmill/coding-agent-extension/issues"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://github.com/teckmill/coding-agent-extension#readme"
+}
